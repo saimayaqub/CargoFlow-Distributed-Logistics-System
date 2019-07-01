@@ -1,0 +1,22 @@
+﻿
+//Get Quotations of a specific customer
+
+var quotations = context.Quotation
+    .Include(o => o.Details)
+        .ThenInclude(d => d.Product)
+    .Where(o => o.CustomerId == 1234);
+
+	//To delete a range of sub entities (where cascade update or delete were not applied at db level):
+
+	var author = unitOfWork.Authors.GetAuthorWithCourses(1);
+	unitOfWork.Courses.RemoveRange(author.Courses);
+	unitOfWork.Authors.Remove(author);
+
+	//In scenario of RevLog
+
+	var customer = unitOfWork.Customer.Get(id);
+	var quotations = unitOfWork.Quotation.GetQuotationsByCustomer(1);
+	unitOfWork.Quotation.RemoveRange(quotations);
+	unitOfWork.Customer.Remove(customer);
+
+	unitOfWork.Complete();

@@ -1,0 +1,85 @@
+﻿@model Web.APIMessages.Operator
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Operator</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="OperatorId" />
+
+            <h4>Login Information</h4>
+            <hr />
+
+            <div class="form-group">
+                <label asp-for="RevLogUser.Email" class="control-label"></label>
+                <input asp-for="RevLogUser.Email" class="form-control" />
+                <span asp-validation-for="RevLogUser.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RevLogUser.Password" class="control-label"></label>
+                <input asp-for="RevLogUser.Password" class="form-control" />
+                <span asp-validation-for="RevLogUser.Password" class="text-danger"></span>
+            </div>
+
+            <h4>Operator Information</h4>
+            <hr />
+            <div class="form-group">
+                <label asp-for="RevLogUser.Name" class="control-label"></label>
+                <input asp-for="RevLogUser.Name" class="form-control" />
+                <span asp-validation-for="RevLogUser.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RevLogUser.Phone" class="control-label"></label>
+                <input asp-for="RevLogUser.Phone" class="form-control" />
+                <span asp-validation-for="RevLogUser.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RevLogUser.City" class="control-label"></label>
+                <input asp-for="RevLogUser.City" class="form-control" />
+                <span asp-validation-for="RevLogUser.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RevLogUser.Country" class="control-label"></label>
+                <input asp-for="RevLogUser.Country" class="form-control" />
+                <span asp-validation-for="RevLogUser.Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RevLogUser.Address" class="control-label"></label>
+                <input asp-for="RevLogUser.Address" class="form-control" />
+                <span asp-validation-for="RevLogUser.Address" class="text-danger"></span>
+            </div>
+
+            <h4>Company Information</h4>
+            <hr />
+
+            <div class="form-group">
+                <label asp-for="Ntn" class="control-label"></label>
+                <input asp-for="Ntn" class="form-control" />
+                <span asp-validation-for="Ntn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyName" class="control-label"></label>
+                <input asp-for="CompanyName" class="form-control" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Revolution in Logistics</h1>
+        <p>Digital freight forwarding as easy as pie</p>
+
+        @Html.ActionLink("Request Quotation", "Index",
+                                new { controller = "RequestQuotation" },
+                                new { @class = "btn btn-primary btn-lg" })
+
+
+        @Html.ActionLink("Sign Up", "create", "CustProfile",
+                                new { area = "CustWeb" },
+                                new { @class = "btn btn-outline-primary btn-lg" })
+
+    </div>

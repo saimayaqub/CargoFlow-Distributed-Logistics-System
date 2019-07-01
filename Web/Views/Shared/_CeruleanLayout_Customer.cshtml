@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Rev Log - Admin</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/cerulean_theme/bootstrap.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/cerulean_theme/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+    </environment>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/cerulean_theme/bootstrap.css" />
+
+</head>
+<body>
+    @{await Html.RenderPartialAsync("CeruleanHeaderView");}
+
+
+    <div class="">
+        <partial name="_CookieConsentPartial" />
+        <main role="main">
+            <table style="width:100%;">
+                <tr>
+                    <td valign="top" width="20%" style="margin-top:100px">
+                        @Html.ActionLink("Home page", "Index",
+                             new { controller = "Home" },
+                             new { @class = "btn btn-primary btn-lg" })
+                        <br />
+                        <br />
+                        @Html.ActionLink("Operators", "Index",
+                             new { controller = "Operators" },
+                             new { @class = "btn btn-primary btn-lg" })
+                        <br />
+                        <br />
+                        @Html.ActionLink("All Customers", "Index",
+                            new { controller = "Customers" },
+                            new { @class = "btn btn-primary btn-lg" })
+                    </td>
+                    <td valign="top" width="60%">@RenderBody()</td>
+                    <td valign="top" width="20%">Right side bar</td>
+                </tr>
+            </table>
+        </main>
+    </div>
+
+    @{await Html.RenderPartialAsync("CeruleanFooterView");}
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+

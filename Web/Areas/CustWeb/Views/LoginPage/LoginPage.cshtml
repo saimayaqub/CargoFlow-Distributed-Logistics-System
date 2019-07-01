@@ -1,0 +1,16 @@
+﻿@model Web.Areas.CustWeb.ViewModels.LoginPageVM
+
+@{
+    ViewData["Title"] = "LoginPage";
+    Layout = "~/Views/Shared/_CeruleanLayout.cshtml";
+}
+
+<h1>LoginPage</h1>
+
+
+@using (Html.BeginForm())
+{
+    @Html.EditorFor(m => m);
+    <input type="submit" value="Save" class="submit" />
+}
+

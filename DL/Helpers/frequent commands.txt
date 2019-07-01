@@ -1,0 +1,9 @@
+﻿syntax:
+
+Scaffold-DbContext "Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Tables "Blog","Post" -ContextDir Context -Context BlogContext
+
+our command:
+Scaffold-DbContext "Server=.\SQLEXPRESS;Database=dbRevLog;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -force
+
+our command for selected tables:
+Scaffold-DbContext "Server=.\SQLEXPRESS;Database=dbRevLog;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Tables "Operator" -ContextDir Models -Context dbRevLogContext -force

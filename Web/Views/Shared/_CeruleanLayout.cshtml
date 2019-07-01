@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Rev Log - Admin</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/cerulean_theme/bootstrap.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/cerulean_theme/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+    </environment>
+
+    <link rel="stylesheet" href="~/css/bgsetting.css" />
+    <link rel="stylesheet" href="~/css/fullbg.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/cerulean_theme/bootstrap.css" />
+
+</head>
+<body>
+    @{await Html.RenderPartialAsync("CeruleanHeaderView");}
+
+    <div class="">
+        <partial name="_CookieConsentPartial" />
+        <main role="main">
+            <div class="container">
+                <img src="~/images/digital-air-cargo-booking.jpg" alt="Snow" style="width:100%;">
+                <div class="bottom-left">@*Bottom Left*@</div>
+                <div class="top-left">@*Top Left*@</div>
+                <div class="top-right">@*Top Right*@</div>
+                <div class="bottom-right">@*Bottom Right*@</div>
+                <div class="centered">
+                    
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <table style="width:100%;">
+        <tr>
+            <td valign="top" width="10%"></td>
+            <td valign="top" width="30%">@RenderBody()</td>
+            <td valign="top" width="10%"></td>
+        </tr>
+    </table>
+
+    @{await Html.RenderPartialAsync("CeruleanFooterView");}
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+

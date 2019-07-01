@@ -1,0 +1,62 @@
+﻿@model Web.APIMessages.Customer
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_CeruleanLayout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Customer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="@Html.DisplayNameFor(model => model.RevLogUser.Email)" class="control-label">
+                    @Html.DisplayNameFor(model => model.RevLogUser.Email)
+                </label>
+                <input asp-for="@Html.DisplayNameFor(model => model.RevLogUser.Email)" class="form-control" />
+                <span asp-validation-for="@Html.DisplayNameFor(model => model.RevLogUser.Email)" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Html.DisplayNameFor(model => model.RevLogUser.Password)" class="control-label">
+                    @Html.DisplayNameFor(model => model.RevLogUser.Password)
+                </label>
+                <input asp-for="@Html.DisplayNameFor(model => model.RevLogUser.Password)" class="form-control" />
+                <span asp-validation-for="@Html.DisplayNameFor(model => model.RevLogUser.Password)" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Html.DisplayNameFor(model => model.RevLogUser.Name)" class="control-label">
+                    @Html.DisplayNameFor(model => model.RevLogUser.Name)
+                </label>
+                <input asp-for="@Html.DisplayNameFor(model => model.RevLogUser.Name)" class="form-control" />
+                <span asp-validation-for="@Html.DisplayNameFor(model => model.RevLogUser.Name)" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Html.DisplayNameFor(model => model.RevLogUser.Phone)" class="control-label">
+                    @Html.DisplayNameFor(model => model.RevLogUser.Phone)
+                </label>
+                <input asp-for="@Html.DisplayNameFor(model => model.RevLogUser.Phone)" class="form-control" />
+                <span asp-validation-for="@Html.DisplayNameFor(model => model.RevLogUser.Phone)" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Html.DisplayNameFor(model => model.RevLogUser.Address)" class="control-label">
+                    @Html.DisplayNameFor(model => model.RevLogUser.Address)
+                </label>
+                <input asp-for="@Html.DisplayNameFor(model => model.RevLogUser.Address)" class="form-control" />
+                <span asp-validation-for="@Html.DisplayNameFor(model => model.RevLogUser.Address)" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
